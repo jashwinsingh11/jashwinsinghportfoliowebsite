@@ -16,20 +16,22 @@ export const Hero = () => {
             <div className="w-64 h-64 rounded-full overflow-hidden relative">
               <div className="absolute inset-0 bg-primary/20 rounded-full"></div>
               <img
-                src="/lovable-uploads/357f8a4f-96e4-4711-91dd-b5d2cde809fc.png"
+                src="/lovable-uploads/JashwinProfilePic.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            Hi, It's <span className="text-primary">Alex</span>
+            Hi, I'm <span className="text-primary">Jashwin Singh</span>
           </h1>
           <h2 className="text-2xl md:text-3xl mb-6">
-            I'm a <span className="text-primary">Web Developer</span>
+          <span className="text-primary">Software Engineer | Programmer</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          As dedicated Software Engineering student and a Programmer with a passion for crafting innovative solutions to complex problems. With expertise in designing, developing, and maintaining high-quality software applications, I thrive in creating impactful projects that drive success. Whether it's building dynamic applications, simplifying coding concepts, or exploring cutting-edge technologies, my goal is to deliver excellence and value through every line of code.
+
+
           </p>
           <div className="flex gap-6 mb-8">
             <a href="#" className="text-gray-400 hover:text-primary transition-colors">

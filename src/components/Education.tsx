@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 
 const education = [
   {
-    title: "University",
-    year: "2018 - 2022",
-    description: "Bachelor's in Computer Science",
+    title: "Tertiary Education - University Of The South Pacific",
+    year: "2022 - Present",
+    description: "Bachelor of Software Engineering",
   },
   {
-    title: "High School",
-    year: "2016 - 2018",
-    description: "Science and Mathematics",
+    title: "Secondary Education - Xavier College",
+    year: "2017 - 2021",
+    description: "Mathematics, English, Physics, Computer Science, Technical Drawing",
   },
   {
-    title: "Secondary",
-    year: "2014 - 2016",
+    title: "Primary Education - Moto Sanatan Primary School",
+    year: "2009 - 2016",
     description: "General Education",
   },
 ];
