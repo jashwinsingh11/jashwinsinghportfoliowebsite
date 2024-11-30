@@ -2,30 +2,43 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    title: "Graphic Designer",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    title: "Web Application Development",
+    description: "Creating dynamic, responsive, and visually appealing web applications that provide seamless user experiences across all devices.",
   },
   {
-    title: "Frontend Development",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    title: "Custom Software Development",
+    description: "Designing and developing software solutions tailored to specific business needs, ensuring optimal performance and scalability.",
+  },
+  {
+    title: "Mobile Application Development",
+    description: "Building high-performing and feature-rich mobile apps for Android and iOS platforms, designed to enhance user engagement.",
+  },
+  {
+    title: "Software Maintenance and Support",
+    description: "Offering regular updates, troubleshooting, and performance optimization to ensure software remains functional and relevant over time.",
+  },
+  {
+    title: "Code Review and Optimization",
+    description: "Analyzing and refining codebases to improve efficiency, maintainability, and performance while adhering to best practices.",
+  },
+  {
+    title: "API Integration and Development",
+    description: "Developing and integrating APIs to enable seamless communication between software systems and improve functionality.",
+  },
+  {
+    title: "Graphic Designing",
+    description: "Delivering creative and impactful designs, including logos, banners, social media visuals, and branding materials that make a lasting impression.",
+  },
+  {
+    title: "Database Design and Management",
+    description: "Structuring, optimizing, and managing databases to ensure data integrity, security, and high-speed access.",
   },
   {
     title: "UI/UX Design",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-  },
-  {
-    title: "Content Manager",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-  },
-  {
-    title: "Software Tester",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-  },
-  {
-    title: "SEO Developer",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    description: "Crafting user-centered designs that prioritize usability, accessibility, and aesthetic appeal to enhance the overall experience.",
   },
 ];
+
 
 export const Services = () => {
   return (
