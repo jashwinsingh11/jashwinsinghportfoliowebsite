@@ -1,15 +1,24 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "Figma", icon: "figma.svg" },
-  { name: "React", icon: "react.svg" },
-  { name: "Node.js", icon: "nodejs.svg" },
-  { name: "WordPress", icon: "wordpress.svg" },
-  { name: "Angular", icon: "angular.svg" },
+  { name: "C++", icon: "c++.svg" },
+  { name: "Java", icon: "java.svg" },
+  { name: "C#", icon: "csharp.svg" },
   { name: "Python", icon: "python.svg" },
   { name: "PHP", icon: "php.svg" },
-  { name: "Flutter", icon: "flutter.svg" },
-  { name: "Firebase", icon: "firebase.svg" },
+  { name: "React", icon: "react.svg" },
+  { name: "JavaScript", icon: "javascript.svg" },
+  { name: "HTML", icon: "html.svg" },
+  { name: "CSS", icon: "css.svg" },
+  { name: "ASP.NET Core", icon: "dotnet.svg" },
+  { name: "Spring Boot", icon: "spring.svg" },
+  { name: "Laravel", icon: "laravel.svg" },
+  { name: "MySQL", icon: "mysql.svg" },
+  { name: "SQL Server Management Studio", icon: "sql.svg" },
+  { name: "Figma", icon: "figma.svg" },
+  { name: "Canva", icon: "canva.svg" },
+  { name: "Adobe Photoshop", icon: "photoshop.svg" },
+  { name: "Git", icon: "git.svg" },
 ];
 
 export const Skills = () => {
