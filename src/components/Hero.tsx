@@ -22,13 +22,13 @@ export const Hero = () => {
               />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 font-Geraldine">
             Hi, I'm <span className="text-primary">Jashwin Singh</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl mb-6">
+          <h2 className="text-2xl md:text-3xl mb-6 font-Geraldine">
           <span className="text-primary">Software Engineer | Programmer</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 font-Geraldine">
           As dedicated Software Engineering student and a Programmer with a passion for crafting innovative solutions to complex problems. With expertise in designing, developing, and maintaining high-quality software applications, I thrive in creating impactful projects that drive success. Whether it's building dynamic applications, simplifying coding concepts, or exploring cutting-edge technologies, my goal is to deliver excellence and value through every line of code.
 
 

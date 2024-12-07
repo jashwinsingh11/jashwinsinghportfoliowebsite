@@ -1,24 +1,26 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "C++", icon: "c++.svg" },
-  { name: "Java", icon: "java.svg" },
-  { name: "C#", icon: "csharp.svg" },
-  { name: "Python", icon: "python.svg" },
-  { name: "PHP", icon: "php.svg" },
-  { name: "React", icon: "react.svg" },
-  { name: "JavaScript", icon: "javascript.svg" },
-  { name: "HTML", icon: "html.svg" },
-  { name: "CSS", icon: "css.svg" },
-  { name: "ASP.NET Core", icon: "dotnet.svg" },
-  { name: "Spring Boot", icon: "spring.svg" },
-  { name: "Laravel", icon: "laravel.svg" },
-  { name: "MySQL", icon: "mysql.svg" },
-  { name: "SQL Server Management Studio", icon: "sql.svg" },
-  { name: "Figma", icon: "figma.svg" },
-  { name: "Canva", icon: "canva.svg" },
-  { name: "Adobe Photoshop", icon: "photoshop.svg" },
-  { name: "Git", icon: "git.svg" },
+  { name: "C++", icon: "/icons/c++.svg" },
+  { name: "C#", icon: "/icons/csharp.svg" },
+  { name: "CSS", icon: "/icons/css.svg" },
+  { name: "HTML", icon: "/icons/html.svg" },
+  { name: "JavaScript", icon: "/icons/javascript.svg" },
+  { name: "Java", icon: "/icons/java.svg" },
+  { name: "Python", icon: "/icons/python.svg" },
+  { name: "PHP", icon: "/icons/php.svg" },
+  { name: "React", icon: "/icons/react.svg" },
+  { name: "React Native", icon: "/icons/reactnative.svg" },
+  { name: "ASP.NET Core", icon: "/icons/dotnet.svg" },
+  { name: "Spring Boot", icon: "/icons/spring.svg" },
+  { name: "Laravel", icon: "/icons/laravel.svg" },
+  { name: "MySQL", icon: "/icons/mysql.svg" },
+  { name: "SQL Server Management Studio", icon: "/icons/sql.svg" },
+  { name: "Figma", icon: "/icons/figma.svg" },
+  { name: "Canva", icon: "/icons/canva.svg" },
+  { name: "Adobe Photoshop", icon: "/icons/photoshop.svg" },
+  { name: "Github", icon: "/icons/github.svg" },
+  { name: "Git", icon: "/icons/git.svg" },
 ];
 
 export const Skills = () => {
@@ -43,9 +45,13 @@ export const Skills = () => {
               className="bg-secondary p-4 rounded-lg flex flex-col items-center justify-center aspect-square hover:bg-primary/20 transition-colors"
             >
               <img
-                src={`/icons/${skill.icon}`}
+                src={skill.icon}
                 alt={skill.name}
                 className="w-12 h-12 mb-2"
+                onError={(e) => {
+                  console.error(`Failed to load image: ${skill.icon}`);
+                  e.currentTarget.style.display = 'none';
+                }}
               />
               <span className="text-sm text-gray-400">{skill.name}</span>
             </motion.div>

@@ -98,4 +98,9 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  @font-face {
+    font-family: 'Geraldine';
+    src: url('/fonts/Geraldine.ttf') format('truetype');
+  }
 }

@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 
 export const About = () => {
   const skills = [
-    "React", "TypeScript", "Node.js", "Python",
-    "AWS", "Docker", "GraphQL", "MongoDB"
+    "C++", "C#", "CSS", "HTML", "JavaScript", "Java", "Python",
+    "PHP", "React", "React Native", "ASP.NET Core", "Spring Boot", 
+    "Laravel", "MySQL", "SQL Server Management Studio", "Figma", 
+    "Canva", "Adobe Photoshop", "Github", "Git"
+    
   ];
 
   return (
@@ -20,10 +23,12 @@ export const About = () => {
             About Me
           </h2>
           <p className="text-gray-600 text-lg mb-8">
-            With over 5 years of experience in software development, I specialize in
-            building scalable web applications using modern technologies. I'm
-            passionate about creating efficient, maintainable code and delivering
-            exceptional user experiences.
+          I am a final-year Software Engineering student at the University of the South Pacific (USP) with a deep passion for technology and a drive to innovate. With a solid foundation in computer science principles and programming languages, I am committed to applying my knowledge to solve real-world problems and build impactful software solutions.
+Currently, I am enhancing my practical experience as a Programmer Intern at the Tertiary Scholarships and Loans Service (TSLS), where I contribute to designing, developing, and maintaining software applications to streamline internal processes. This internship has allowed me to sharpen my skills in both web and mobile development, working with modern tools and frameworks to deliver user-centric solutions.
+
+Throughout my academic journey, I have developed a keen interest in areas like system design, algorithm optimization, and emerging technologies. I am constantly exploring new ways to expand my technical expertise and stay ahead of industry trends. Whether it’s experimenting with new frameworks, contributing to open-source projects, or diving into cutting-edge technologies like AI and machine learning, I’m always eager to learn and grow.
+
+My goal is to become a software engineer who not only excels technically but also creates software that improves the user experience and drives meaningful change. I thrive on challenges and am motivated by the opportunity to contribute to projects that push the boundaries of innovation.
           </p>
           <div className="mt-12">
             <h3 className="text-2xl font-bold text-primary mb-6">Skills</h3>
