@@ -26,7 +26,12 @@ export const Projects = () => {
       image: "https://private-user-images.githubusercontent.com/111979486/393499871-8d596994-8218-4a9f-99cb-8ce7205e8f6d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM1NjQ1MTAsIm5iZiI6MTczMzU2NDIxMCwicGF0aCI6Ii8xMTE5Nzk0ODYvMzkzNDk5ODcxLThkNTk2OTk0LTgyMTgtNGE5Zi05OWNiLThjZTcyMDVlOGY2ZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwN1QwOTM2NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lZTVmNGU3NzIyZDMwODkzMDZkNTFmNTU3YTY1YjNhYmM4ODhmNzdjNDdjZDMxZDYyYmEwOTBjZGIwM2VhNWYwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.0GJkH4X36rJrFgEJt1IeTos2PGoljhFv2eB8CbkH-Xw",
       tags: ["React", "TypeScript", "Tailwind CSS"],
     },
-
+    {
+        title: "BulaFit App",
+        description: "BulaFit is a fitness app inspired by the vibrant culture and natural beauty of Fiji. It helps users embrace a healthy lifestyle by offering features like workout tracking, meal planning with local Fijian recipes, and personalized fitness plans. Designed with an interactive and user-friendly interface, BulaFit promotes well-being while celebrating the essence of Fiji. \n\n*This app is currently in development and will continue to evolve with new features and enhancements.*",
+        image: "",
+        tags: ["React Native", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "OpenAI API", "Firebase Firestore"]
+    },
   ];
 
   return (
