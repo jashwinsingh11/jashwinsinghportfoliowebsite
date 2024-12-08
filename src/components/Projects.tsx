@@ -24,7 +24,7 @@ export const Projects = () => {
       title: "Portfolio Website",
       description: "A personal portfolio website designed to showcase projects, skills, and achievements. it provides a professional online presence with an interactive and user-friendly interface. This website serves as a digital resume to highlight my work and contributions in the field of software development.",
       image: "https://private-user-images.githubusercontent.com/111979486/393499871-8d596994-8218-4a9f-99cb-8ce7205e8f6d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM1NjQ1MTAsIm5iZiI6MTczMzU2NDIxMCwicGF0aCI6Ii8xMTE5Nzk0ODYvMzkzNDk5ODcxLThkNTk2OTk0LTgyMTgtNGE5Zi05OWNiLThjZTcyMDVlOGY2ZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwN1QwOTM2NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lZTVmNGU3NzIyZDMwODkzMDZkNTFmNTU3YTY1YjNhYmM4ODhmNzdjNDdjZDMxZDYyYmEwOTBjZGIwM2VhNWYwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.0GJkH4X36rJrFgEJt1IeTos2PGoljhFv2eB8CbkH-Xw",
-      tags: ["React", "TypeScript", "Tailwind CSS"],
+      tags: ["React", "JavaScript", "Tailwind CSS"],
     },
     {
         title: "BulaFit App",
@@ -32,6 +32,13 @@ export const Projects = () => {
         image: "",
         tags: ["React Native", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "OpenAI API", "Firebase Firestore"]
     },
+    {
+      title: "In Progress - Research and Development",
+      description: "\n\n*Currently in the research and planning phase. This project is still being conceptualized, and new features and enhancements will be explored as development progresses.*",
+      image: "",
+      tags: ["Research", "Planning", "Ideation"]
+    }
+    
   ];
 
   return (
