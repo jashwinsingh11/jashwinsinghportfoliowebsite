@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Facebook, Instagram } from "lucide-react";
 
 export const Hero = () => {
+  const handleResumeRequest = () => {
+    const emailSubject = "Resume Request - Professional Software Engineer Portfolio Inquiry";
+    const emailBody = "Dear Jashwin Singh,\n\nI came across your portfolio and was impressed by your experience and skills as a Software Engineer. I would greatly appreciate if you could share your detailed resume with me.\n\nThank you for your time and consideration.\n\nBest regards";
+    const mailtoLink = `mailto:jashwinsinghfj11@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-background text-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/20 blur-3xl"></div>
@@ -9,7 +16,7 @@ export const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="flex flex-col items-center text-center"
         >
           <div className="mb-8 relative">
@@ -34,21 +41,24 @@ export const Hero = () => {
 
           </p>
           <div className="flex gap-6 mb-8">
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+            <a href="https://github.com/jashwinsingh11" className="text-gray-400 hover:text-primary transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-              <Twitter className="w-6 h-6" />
+            <a href="https://www.instagram.com/jashwinsingh11/" className="text-gray-400 hover:text-primary transition-colors">
+              <Instagram className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/jashwinsingh" className="text-gray-400 hover:text-primary transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-              <Mail className="w-6 h-6" />
+            <a href="https://www.facebook.com/Jashwinz?mibextid=ZbWKwL" className="text-gray-400 hover:text-primary transition-colors">
+              <Facebook className="w-6 h-6" />
             </a>
           </div>
-          <button className="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-primary/90 transition-all">
-            Hire Me
+          <button 
+            onClick={handleResumeRequest}
+            className="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-primary/90 transition-all"
+          >
+            Download Resume
           </button>
         </motion.div>
       </div>

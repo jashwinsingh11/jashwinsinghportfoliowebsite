@@ -1,10 +1,38 @@
 import { motion } from "framer-motion";
 import { toast } from "sonner";
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
 export const Contact = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Message sent successfully!");
+    setIsLoading(true);
+
+    const form = e.currentTarget;
+    const formData = {
+      from_name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      from_email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      to_email: 'jashwinsinghfj11@gmail.com',
+    };
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      toast.success("Message sent successfully!");
+      form.reset();
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -24,6 +52,7 @@ export const Contact = () => {
             <div>
               <input
                 type="text"
+                name="name"
                 placeholder="Name"
                 required
                 className="w-full px-4 py-3 bg-secondary text-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -32,6 +61,7 @@ export const Contact = () => {
             <div>
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
                 required
                 className="w-full px-4 py-3 bg-secondary text-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -39,6 +69,7 @@ export const Contact = () => {
             </div>
             <div>
               <textarea
+                name="message"
                 placeholder="Message"
                 required
                 rows={4}
@@ -47,9 +78,10 @@ export const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition-all"
+              disabled={isLoading}
+              className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {isLoading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </motion.div>
