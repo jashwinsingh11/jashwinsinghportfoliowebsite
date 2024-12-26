@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { title } from "process";
 
 export const Projects = () => {
   const projects = [
@@ -26,7 +27,7 @@ export const Projects = () => {
       image: "./images/PortfolioProject.png",
       tags: ["React", "JavaScript", "Tailwind CSS"],
     },
-    {
+    /*{
         title: "BulaFit App",
         description: "BulaFit is a fitness app inspired by the vibrant culture and natural beauty of Fiji. It helps users embrace a healthy lifestyle by offering features like workout tracking, meal planning with local Fijian recipes, and personalized fitness plans. Designed with an interactive and user-friendly interface, BulaFit promotes well-being while celebrating the essence of Fiji. \n\n*This app is currently in development and will continue to evolve with new features and enhancements.*",
         image: "./images/InProgress.png",
@@ -38,7 +39,7 @@ export const Projects = () => {
       image: "./images/InProgress.png",
       tags: ["Research", "Planning", "Ideation"]
     }
-    
+    */
   ];
 
   return (
