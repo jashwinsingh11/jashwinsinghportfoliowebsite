@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::", // Ensure IPv6 compatibility is intended
     port: 8080,
   },
-  base: "/jashwinsinghportfoliowebsite", // Properly placed base property
+  //// Properly placed base property
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
