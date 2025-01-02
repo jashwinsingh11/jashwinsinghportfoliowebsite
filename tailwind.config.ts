@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 
-
 export default {
   darkMode: ["class"],
   content: [
@@ -20,6 +19,9 @@ export default {
       },
     },
     extend: {
+      zIndex: {
+        '-10': '-10',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
