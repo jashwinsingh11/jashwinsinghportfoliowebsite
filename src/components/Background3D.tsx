@@ -1,15 +1,12 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { useRef } from 'react';
-import * as THREE from 'three';
+import { Suspense } from 'react';
 
 const AnimatedSphere = () => {
-  const meshRef = useRef<THREE.Mesh>(null);
-
   return (
-    <mesh ref={meshRef}>
+    <mesh>
       <sphereGeometry args={[1, 32, 32]} />
-      <meshBasicMaterial color="#FF3232" wireframe />
+      <meshBasicMaterial color={0xff3232} wireframe />
     </mesh>
   );
 };
@@ -35,12 +32,14 @@ const Scene = () => {
 export const Background3D = () => {
   return (
     <div className="fixed inset-0 -z-10">
-      <Canvas
-        camera={{ position: [0, 0, 5] }}
-        style={{ background: 'transparent' }}
-      >
-        <Scene />
-      </Canvas>
+      <Suspense fallback={null}>
+        <Canvas
+          camera={{ position: [0, 0, 5] }}
+          style={{ background: 'transparent' }}
+        >
+          <Scene />
+        </Canvas>
+      </Suspense>
     </div>
   );
 };
