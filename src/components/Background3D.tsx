@@ -7,10 +7,10 @@ const AnimatedSphere = () => {
   const meshRef = useRef<THREE.Mesh>(null);
 
   return (
-    <mesh ref={meshRef}>
+    <mesh ref={meshRef} position={[0, 0, 0]}>
       <sphereGeometry args={[1, 16, 16]} />
       <meshStandardMaterial
-        color={new THREE.Color("#FF3232")}
+        color={0xFF3232}
         roughness={0.5}
         metalness={0.5}
         wireframe
@@ -25,11 +25,11 @@ const Scene = () => {
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       <Stars 
-        radius={25} 
-        depth={25} 
-        count={500} 
-        factor={2} 
-        fade 
+        radius={100} 
+        depth={50} 
+        count={1000} 
+        factor={4} 
+        saturation={0} 
       />
       <AnimatedSphere />
       <OrbitControls
@@ -50,12 +50,13 @@ export const Background3D = () => {
       <Canvas
         camera={{ 
           position: [0, 0, 5],
-          fov: 45
+          fov: 75
         }}
+        dpr={window.devicePixelRatio}
         gl={{ 
           antialias: true,
           alpha: true,
-          toneMapping: THREE.NoToneMapping
+          powerPreference: 'default'
         }}
         style={{ background: 'transparent' }}
       >
