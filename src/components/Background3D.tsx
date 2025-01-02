@@ -6,9 +6,9 @@ import * as THREE from 'three';
 const AnimatedSphere = () => {
   return (
     <mesh>
-      <sphereBufferGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial 
-        color={new THREE.Color(0xff3232)}
+      <sphereGeometry args={[1, 32, 32]} />
+      <meshBasicMaterial 
+        color={0xff3232}
         wireframe={true}
       />
     </mesh>
@@ -37,22 +37,12 @@ export const Background3D = () => {
   return (
     <div className="fixed inset-0 -z-10">
       <Canvas
-        dpr={[1, 2]}
-        gl={{ 
-          antialias: true,
-          alpha: true,
-          powerPreference: "high-performance"
-        }}
-        camera={{ 
+        camera={{
           position: [0, 0, 5],
-          fov: 75,
-          near: 0.1,
-          far: 1000
+          fov: 75
         }}
       >
-        <Suspense fallback={null}>
-          <Scene />
-        </Suspense>
+        <Scene />
       </Canvas>
     </div>
   );
