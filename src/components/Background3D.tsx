@@ -10,7 +10,7 @@ const AnimatedSphere = () => {
     <mesh ref={meshRef}>
       <sphereGeometry args={[1, 16, 16]} />
       <meshStandardMaterial
-        color="#FF3232"
+        color={new THREE.Color("#FF3232")}
         roughness={0.5}
         metalness={0.5}
         wireframe
@@ -50,13 +50,12 @@ export const Background3D = () => {
       <Canvas
         camera={{ 
           position: [0, 0, 5],
-          fov: 45,
-          near: 0.1,
-          far: 50
+          fov: 45
         }}
         gl={{ 
           antialias: true,
-          alpha: true
+          alpha: true,
+          toneMapping: THREE.NoToneMapping
         }}
         style={{ background: 'transparent' }}
       >
