@@ -1,14 +1,14 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
-import { useRef, Suspense } from 'react';
+import { useRef } from 'react';
 import * as THREE from 'three';
 
 const AnimatedSphere = () => {
   const meshRef = useRef<THREE.Mesh>(null);
 
   return (
-    <mesh ref={meshRef} position={[0, 0, 0]}>
-      <sphereGeometry args={[1, 32, 32]} />
+    <mesh ref={meshRef}>
+      <sphereGeometry args={[1, 16, 16]} />
       <meshStandardMaterial
         color="#FF3232"
         roughness={0.5}
@@ -25,12 +25,11 @@ const Scene = () => {
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       <Stars 
-        radius={50} 
-        depth={50} 
-        count={1000} 
-        factor={4} 
+        radius={25} 
+        depth={25} 
+        count={500} 
+        factor={2} 
         fade 
-        saturation={0}
       />
       <AnimatedSphere />
       <OrbitControls
@@ -51,21 +50,17 @@ export const Background3D = () => {
       <Canvas
         camera={{ 
           position: [0, 0, 5],
-          fov: 60,
+          fov: 45,
           near: 0.1,
-          far: 100
+          far: 50
         }}
         gl={{ 
           antialias: true,
-          alpha: true,
-          powerPreference: "default"
+          alpha: true
         }}
-        dpr={window.devicePixelRatio}
         style={{ background: 'transparent' }}
       >
-        <Suspense fallback={null}>
-          <Scene />
-        </Suspense>
+        <Scene />
       </Canvas>
     </div>
   );
