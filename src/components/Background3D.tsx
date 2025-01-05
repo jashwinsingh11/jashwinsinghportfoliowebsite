@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 
 const Scene = () => {
   return (
-    <group>
+    <>
       <ambientLight intensity={0.5} />
       <directionalLight position={[2, 2, 5]} intensity={1} />
       <mesh>
@@ -16,7 +16,7 @@ const Scene = () => {
           opacity={0.15}
         />
       </mesh>
-    </group>
+    </>
   );
 };
 
@@ -31,15 +31,9 @@ const Background3D = () => {
             near: 0.1,
             far: 1000
           }}
-          gl={{
-            antialias: true,
-            alpha: true
-          }}
           style={{ background: 'transparent' }}
         >
-          <Suspense fallback={null}>
-            <Scene />
-          </Suspense>
+          <Scene />
           <OrbitControls
             enableZoom={false}
             enablePan={false}
