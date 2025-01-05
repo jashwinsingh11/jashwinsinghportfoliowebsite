@@ -10,16 +10,24 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-background text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/20 blur-3xl"></div>
-      <div className="container mx-auto px-4 py-16 relative z-10">
+    <section className="min-h-screen flex items-center justify-center bg-transparent text-white relative overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="container mx-auto px-4 py-16 relative z-10"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           className="flex flex-col items-center text-center"
         >
-          <div className="mb-8 relative">
+          <motion.div 
+            className="mb-8 relative"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
             <div className="w-64 h-64 rounded-full overflow-hidden relative">
               <div className="absolute inset-0 bg-primary/20 rounded-full"></div>
               <img
@@ -28,40 +36,79 @@ export const Hero = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 font-Geraldine">
+          </motion.div>
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-4 font-Geraldine"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
             Hi, I'm <span className="text-primary">Jashwin Singh</span>
-          </h1>
-          <h2 className="text-2xl md:text-3xl mb-6 font-Geraldine">
-          <span className="text-primary">Software Engineer | Programmer</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 font-Geraldine">
-          As dedicated Software Engineering student and a Programmer with a passion for crafting innovative solutions to complex problems. With expertise in designing, developing, and maintaining high-quality software applications, I thrive in creating impactful projects that drive success. Whether it's building dynamic applications, simplifying coding concepts, or exploring cutting-edge technologies, my goal is to deliver excellence and value through every line of code.
-
-
-          </p>
-          <div className="flex gap-6 mb-8">
-            <a href="https://github.com/jashwinsingh11" className="text-gray-400 hover:text-primary transition-colors">
+          </motion.h1>
+          <motion.h2 
+            className="text-2xl md:text-3xl mb-6 font-Geraldine"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <span className="text-primary">Software Engineer | Programmer</span>
+          </motion.h2>
+          <motion.p 
+            className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 font-Geraldine"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            As dedicated Software Engineering student and a Programmer with a passion for crafting innovative solutions to complex problems. With expertise in designing, developing, and maintaining high-quality software applications, I thrive in creating impactful projects that drive success. Whether it's building dynamic applications, simplifying coding concepts, or exploring cutting-edge technologies, my goal is to deliver excellence and value through every line of code.
+          </motion.p>
+          <motion.div 
+            className="flex gap-6 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <motion.a 
+              whileHover={{ scale: 1.2, color: "#FF3232" }}
+              href="https://github.com/jashwinsingh11" 
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               <Github className="w-6 h-6" />
-            </a>
-            <a href="https://www.instagram.com/jashwinsingh11/" className="text-gray-400 hover:text-primary transition-colors">
+            </motion.a>
+            <motion.a 
+              whileHover={{ scale: 1.2, color: "#FF3232" }}
+              href="https://www.instagram.com/jashwinsingh11/" 
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               <Instagram className="w-6 h-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/jashwinsingh" className="text-gray-400 hover:text-primary transition-colors">
+            </motion.a>
+            <motion.a 
+              whileHover={{ scale: 1.2, color: "#FF3232" }}
+              href="https://www.linkedin.com/in/jashwinsingh" 
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               <Linkedin className="w-6 h-6" />
-            </a>
-            <a href="https://www.facebook.com/Jashwinz?mibextid=ZbWKwL" className="text-gray-400 hover:text-primary transition-colors">
+            </motion.a>
+            <motion.a 
+              whileHover={{ scale: 1.2, color: "#FF3232" }}
+              href="https://www.facebook.com/Jashwinz?mibextid=ZbWKwL" 
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               <Facebook className="w-6 h-6" />
-            </a>
-          </div>
-          <button 
+            </motion.a>
+          </motion.div>
+          <motion.button 
             onClick={handleResumeRequest}
             className="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-primary/90 transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
           >
             Download Resume
-          </button>
+          </motion.button>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
