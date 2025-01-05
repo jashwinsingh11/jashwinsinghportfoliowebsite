@@ -7,14 +7,15 @@ const Scene = () => {
     <>
       <ambientLight intensity={0.5} />
       <directionalLight position={[2, 2, 5]} intensity={1} />
-      <Sphere args={[1, 100, 200]} scale={2.4}>
+      <mesh>
+        <sphereGeometry args={[1, 100, 200]} />
         <meshStandardMaterial
           color="#FF3232"
           wireframe
           transparent
           opacity={0.15}
         />
-      </Sphere>
+      </mesh>
     </>
   );
 };
@@ -37,6 +38,7 @@ const Background3D = () => {
               powerPreference: "high-performance"
             }}
             style={{ background: 'transparent' }}
+            dpr={[1, 2]}
           >
             <Scene />
             <OrbitControls
@@ -46,6 +48,7 @@ const Background3D = () => {
               maxPolarAngle={Math.PI / 2}
               enableDamping={true}
               dampingFactor={0.05}
+              rotateSpeed={0.5}
             />
           </Canvas>
         </Suspense>
