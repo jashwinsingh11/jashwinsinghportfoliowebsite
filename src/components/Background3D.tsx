@@ -1,50 +1,49 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { Suspense } from 'react';
+import * as THREE from 'three';
+
+const AnimatedSphere = () => {
+  return (
+    <mesh>
+      <sphereGeometry args={[1, 32, 32]} />
+      <meshBasicMaterial 
+        color={0xff3232}
+        wireframe={true}
+      />
+    </mesh>
+  );
+};
 
 const Scene = () => {
   return (
     <>
       <ambientLight intensity={0.5} />
-      <directionalLight position={[2, 2, 5]} intensity={1} />
-      <mesh>
-        <sphereGeometry args={[1, 16, 16]} />
-        <meshStandardMaterial
-          color="#FF3232"
-          wireframe
-          transparent
-          opacity={0.15}
-        />
-      </mesh>
+      <pointLight position={[10, 10, 10]} />
+      <AnimatedSphere />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        autoRotate
+        autoRotateSpeed={0.5}
+        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2}
+      />
     </>
   );
 };
 
-const Background3D = () => {
+export const Background3D = () => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10">
-      <div className="w-full h-full bg-background">
-        <Canvas
-          camera={{
-            position: [0, 0, 5],
-            fov: 75,
-            near: 0.1,
-            far: 1000
-          }}
-        >
-          <Scene />
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            minPolarAngle={Math.PI / 2}
-            maxPolarAngle={Math.PI / 2}
-            enableDamping
-            dampingFactor={0.05}
-            rotateSpeed={0.5}
-          />
-        </Canvas>
-      </div>
+    <div className="fixed inset-0 -z-10">
+      <Canvas
+        camera={{
+          position: [0, 0, 5],
+          fov: 75
+        }}
+      >
+        <Scene />
+      </Canvas>
     </div>
   );
 };
-
-export default Background3D;

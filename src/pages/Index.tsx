@@ -5,22 +5,24 @@ import { Education } from "@/components/Education";
 import { Contact } from "@/components/Contact";
 import { Projects } from "@/components/Projects";
 import { About } from "@/components/About";
-import Background3D from "@/components/Background3D";
+import { Background3D } from "@/components/Background3D";
 import { Suspense } from "react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Suspense fallback={<div>Loading...</div>}>
+    <div className="min-h-screen bg-background/90 relative">
+      <Suspense fallback={null}>
         <Background3D />
       </Suspense>
-      <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <Skills />
-      <Education />
-      <Contact />
+      <div className="relative z-10">
+        <Hero />
+        <About />
+        <Services />
+        <Projects />
+        <Skills />
+        <Education />
+        <Contact />
+      </div>
     </div>
   );
 };
