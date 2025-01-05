@@ -4,11 +4,13 @@ import { Suspense } from 'react';
 
 const AnimatedSphere = () => {
   return (
-    <mesh>
+    <mesh position={[0, 0, 0]}>
       <sphereGeometry args={[1, 16, 16]} />
       <meshStandardMaterial 
         color={0xff3232}
         wireframe={true}
+        transparent={true}
+        opacity={0.8}
       />
     </mesh>
   );
@@ -38,11 +40,19 @@ export const Background3D = () => {
       <Canvas
         camera={{
           position: [0, 0, 5],
-          fov: 75
+          fov: 75,
+          near: 0.1,
+          far: 1000
         }}
-        dpr={[1, 2]}
+        dpr={window.devicePixelRatio}
+        gl={{ 
+          antialias: true,
+          alpha: true
+        }}
       >
-        <Scene />
+        <Suspense fallback={null}>
+          <Scene />
+        </Suspense>
       </Canvas>
     </div>
   );
