@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 
 const Scene = () => {
   return (
-    <>
+    <group>
       <ambientLight intensity={0.5} />
       <directionalLight position={[2, 2, 5]} intensity={1} />
       <mesh>
@@ -16,7 +16,7 @@ const Scene = () => {
           opacity={0.15}
         />
       </mesh>
-    </>
+    </group>
   );
 };
 
@@ -39,16 +39,16 @@ const Background3D = () => {
         >
           <Suspense fallback={null}>
             <Scene />
-            <OrbitControls
-              enableZoom={false}
-              enablePan={false}
-              minPolarAngle={Math.PI / 2}
-              maxPolarAngle={Math.PI / 2}
-              enableDamping
-              dampingFactor={0.05}
-              rotateSpeed={0.5}
-            />
           </Suspense>
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            minPolarAngle={Math.PI / 2}
+            maxPolarAngle={Math.PI / 2}
+            enableDamping
+            dampingFactor={0.05}
+            rotateSpeed={0.5}
+          />
         </Canvas>
       </div>
     </div>
