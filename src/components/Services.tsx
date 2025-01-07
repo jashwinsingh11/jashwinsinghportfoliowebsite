@@ -31,7 +31,7 @@ const StyledServices = styled.section`
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: #3b82f6;
+    background-color: #ea384c;
     opacity: 0.5;
     filter: blur(12px);
     animation: blob-bounce 5s infinite ease;
