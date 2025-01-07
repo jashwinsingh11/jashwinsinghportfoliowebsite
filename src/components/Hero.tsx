@@ -1,5 +1,60 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Facebook, Instagram } from "lucide-react";
+import styled from 'styled-components';
+
+const StyledWrapper = styled.div`
+  .coin {
+    font-size: 200px;
+    width: 0.1em;
+    height: 1em;
+    background: linear-gradient(#faa504, #141001);
+    margin: auto;
+    position: relative;
+    animation: rotate_4001510 7s infinite linear;
+    transform-style: preserve-3d;
+  }
+
+  .coin .side, .coin:before, .coin:after {
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    border-radius: 50%;
+    right: -0.4em;
+    text-align: center;
+    line-height: 1;
+    transform: rotateY(-90deg);
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .coin .tails, .coin:after {
+    left: -0.4em;
+    transform: rotateY(90deg);
+  }
+
+  .coin:before, .coin:after {
+    background: linear-gradient(#faa504, #141001);
+    backface-visibility: hidden;
+    transform: rotateY(90deg);
+  }
+
+  .coin:after {
+    transform: rotateY(-90deg);
+  }
+
+  @keyframes rotate_4001510 {
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .svg_back {
+    transform: scaleX(-1);
+  }
+`;
 
 export const Hero = () => {
   const handleResumeRequest = () => {
@@ -19,26 +74,34 @@ export const Hero = () => {
           transition={{ duration: 0.3 }}
           className="flex flex-col items-center text-center"
         >
-          <div className="mb-8 relative">
-            <div className="w-64 h-64 rounded-full overflow-hidden relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-full"></div>
-              <img
-                src="/lovable-uploads/JashwinProfilePic.jpg"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="mb-8 relative w-64 h-64">
+            <StyledWrapper>
+              <div className="coin">
+                <div className="side heads">
+                  <img
+                    src="/lovable-uploads/JashwinProfilePic.jpg"
+                    alt="Profile"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="side tails">
+                  <img
+                    src="/lovable-uploads/JashwinProfilePic.jpg"
+                    alt="Profile"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+              </div>
+            </StyledWrapper>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-4 font-Geraldine">
             Hi, I'm <span className="text-primary">Jashwin Singh</span>
           </h1>
           <h2 className="text-2xl md:text-3xl mb-6 font-Geraldine">
-          <span className="text-primary">Software Engineer | Programmer</span>
+            <span className="text-primary">Software Engineer | Programmer</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 font-Geraldine">
-          As dedicated Software Engineering student and a Programmer with a passion for crafting innovative solutions to complex problems. With expertise in designing, developing, and maintaining high-quality software applications, I thrive in creating impactful projects that drive success. Whether it's building dynamic applications, simplifying coding concepts, or exploring cutting-edge technologies, my goal is to deliver excellence and value through every line of code.
-
-
+            As dedicated Software Engineering student and a Programmer with a passion for crafting innovative solutions to complex problems. With expertise in designing, developing, and maintaining high-quality software applications, I thrive in creating impactful projects that drive success. Whether it's building dynamic applications, simplifying coding concepts, or exploring cutting-edge technologies, my goal is to deliver excellence and value through every line of code.
           </p>
           <div className="flex gap-6 mb-8">
             <a href="https://github.com/jashwinsingh11" className="text-gray-400 hover:text-primary transition-colors">
