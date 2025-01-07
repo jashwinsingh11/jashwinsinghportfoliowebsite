@@ -7,7 +7,7 @@ const StyledWrapper = styled.div`
     font-size: 200px;
     width: 0.1em;
     height: 1em;
-    background: linear-gradient(#faa504, #141001);
+    background: linear-gradient(#0A0A0A, #141001);
     margin: auto;
     position: relative;
     animation: rotate_4001510 7s infinite linear;
@@ -36,7 +36,7 @@ const StyledWrapper = styled.div`
   }
 
   .coin:before, .coin:after {
-    background: linear-gradient(#faa504, #141001);
+    background: linear-gradient(#0A0A0A, #141001);
     backface-visibility: hidden;
     transform: rotateY(90deg);
   }
