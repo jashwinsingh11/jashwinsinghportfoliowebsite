@@ -42,18 +42,22 @@ export const Skills = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-secondary p-4 rounded-lg flex flex-col items-center justify-center aspect-square hover:bg-primary/20 transition-colors"
+              className="relative bg-secondary p-4 rounded-lg flex flex-col items-center justify-center aspect-square hover:bg-primary/20 transition-colors"
+              style={{
+                boxShadow: '20px 20px 60px #ea384c, -20px -20px 60px #ea384c'
+              }}
             >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 backdrop-blur-sm rounded-lg"></div>
               <img
                 src={skill.icon}
                 alt={skill.name}
-                className="w-12 h-12 mb-2"
+                className="w-12 h-12 mb-2 relative z-10"
                 onError={(e) => {
                   console.error(`Failed to load image: ${skill.icon}`);
                   e.currentTarget.style.display = 'none';
                 }}
               />
-              <span className="text-sm text-gray-400">{skill.name}</span>
+              <span className="text-sm text-gray-400 relative z-10">{skill.name}</span>
             </motion.div>
           ))}
         </div>

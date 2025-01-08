@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { title } from "process";
 
 export const Projects = () => {
   const projects = [
@@ -56,14 +55,18 @@ export const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              className="relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              style={{
+                boxShadow: '20px 20px 60px #ea384c, -20px -20px 60px #ea384c'
+              }}
             >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 backdrop-blur-sm rounded-lg z-0"></div>
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover relative z-10"
               />
-              <div className="p-6">
+              <div className="p-6 relative z-10">
                 <h3 className="text-xl font-bold text-primary mb-2">
                   {project.title}
                 </h3>
