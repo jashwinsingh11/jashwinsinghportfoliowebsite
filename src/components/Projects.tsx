@@ -1,5 +1,60 @@
 import { motion } from "framer-motion";
-import { title } from "process";
+import styled from "styled-components";
+
+const StyledProjects = styled.section`
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    z-index: 1;
+  }
+
+  .bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    z-index: 2;
+    background: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ea384c;
+    opacity: 0.5;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+  }
+
+  @keyframes blob-bounce {
+    0% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+    25% {
+      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+    50% {
+      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+    75% {
+      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+    100% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  }
+`;
 
 export const Projects = () => {
   const projects = [
@@ -43,7 +98,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-secondary">
+    <StyledProjects id="projects" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
           Featured Projects
@@ -56,33 +111,37 @@ export const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              className="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-secondary px-3 py-1 rounded-full text-sm text-primary"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              <div className="bg" />
+              <div className="blob" />
+              <div className="relative z-10">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-primary mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-secondary px-3 py-1 rounded-full text-sm text-primary"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </StyledProjects>
   );
 };
