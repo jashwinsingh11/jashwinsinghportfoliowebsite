@@ -7,13 +7,6 @@ const StyledServices = styled.section`
     overflow: hidden;
     border-radius: 14px;
     z-index: 1;
-    box-shadow: 20px 20px 60px #ea384c33, -20px -20px 60px #ea384c33;
-    transition: all 0.3s ease;
-  }
-
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px #ea384c55;
   }
 
   .bg {
