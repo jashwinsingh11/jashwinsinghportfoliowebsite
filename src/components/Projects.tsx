@@ -28,8 +28,8 @@ const StyledProjects = styled.section`
     z-index: 1;
     top: 50%;
     left: 50%;
-    width: 150px;
-    height: 150px;
+    width: 80%;
+    height: 80%;
     border-radius: 50%;
     background-color: #ea384c;
     opacity: 0.5;
@@ -39,19 +39,19 @@ const StyledProjects = styled.section`
 
   @keyframes blob-bounce {
     0% {
-      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      transform: translate(-50%, -50%) translate3d(0, 0, 0);
     }
     25% {
-      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+      transform: translate(-50%, -50%) translate3d(20%, 0, 0);
     }
     50% {
-      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+      transform: translate(-50%, -50%) translate3d(20%, 20%, 0);
     }
     75% {
-      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+      transform: translate(-50%, -50%) translate3d(0, 20%, 0);
     }
     100% {
-      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      transform: translate(-50%, -50%) translate3d(0, 0, 0);
     }
   }
 `;
